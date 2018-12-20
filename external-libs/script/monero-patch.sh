@@ -2,7 +2,7 @@
 
 set -e
 
-source script/build-external-libs/env.sh
+source script/env.sh
 
 cp script/build-external-libs/wownero/build-all-arch.sh $EXTERNAL_LIBS_BUILD_ROOT/wownero
 

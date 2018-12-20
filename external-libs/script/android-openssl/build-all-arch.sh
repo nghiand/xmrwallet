@@ -9,6 +9,7 @@ set -e
 SRC_DIR=$EXTERNAL_LIBS_BUILD_ROOT/android-openssl
 TARGET_DIR=$EXTERNAL_LIBS_ROOT/openssl
 
+version=1.0.2q
 archs=(arm arm64 x86 x86_64)
 
 for arch in ${archs[@]}; do
@@ -54,7 +55,7 @@ for arch in ${archs[@]}; do
     . ./setenv-android-mod.sh
 
     echo "CROSS COMPILE ENV : $CROSS_COMPILE"
-    cd openssl-1.0.2q
+    cd openssl-${version}
 
     xCFLAGS="-DSHARED_EXTENSION=.so -fPIC -DOPENSSL_PIC -DDSO_DLFCN -DHAVE_DLFCN_H -I$ANDROID_NDK_ROOT/sysroot/usr/include -I$ANDROID_NDK_ROOT/sysroot/usr/include/$_ANDROID_EABI_INC -I$ANDROID_DEV/include -B$ANDROID_DEV/$xLIB -O -fomit-frame-pointer -W"
 
@@ -78,7 +79,7 @@ for arch in ${archs[@]}; do
     cp libcrypto.a $TARGET_LIB_DIR
     cp libssl.a $TARGET_LIB_DIR
 
-    cp -aL $SRC_DIR/openssl-1.0.2q/include/openssl/ $TARGET_DIR/include
+    cp -aL $SRC_DIR/openssl-${version}/include/openssl/ $TARGET_DIR/include
 #    ln -sf $TARGET_DIR/include $TARGET_DIR/arm/include
 
     cd ..
