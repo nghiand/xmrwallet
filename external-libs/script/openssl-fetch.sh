@@ -6,11 +6,11 @@ source script/env.sh
 
 cd $EXTERNAL_LIBS_BUILD_ROOT
 
-if [ ! -f "OpenSSL_1_0_2l.tar.gz" ]; then
-  wget https://github.com/openssl/openssl/archive/OpenSSL_1_0_2l.tar.gz
+if [ ! -f "openssl-1.0.2q.tar.gz" ]; then
+  curl -O https://www.openssl.org/source/openssl-1.0.2q.tar.gz
 fi
 
 if [ ! -d "android-openssl" ]; then
   mkdir android-openssl && cd android-openssl
-  tar xfz ../OpenSSL_1_0_2l.tar.gz
+  tar xfz ../openssl-1.0.2q.tar.gz
 fi

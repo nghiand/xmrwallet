@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  -D BOOST_ROOT=/opt/android/boost_1_58_0
+#  -D BOOST_ROOT=/opt/android/boost_1_68_0
 
 set -e
 

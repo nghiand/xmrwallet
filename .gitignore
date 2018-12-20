@@ -14,3 +14,5 @@
 /app/prodMainnet
 /app/alphaStagenet
 /app/prodStagenet
+.settings
+.project
