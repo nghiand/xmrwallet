@@ -10,7 +10,7 @@ SRC_DIR=$EXTERNAL_LIBS_BUILD_ROOT/android-openssl
 TARGET_DIR=$EXTERNAL_LIBS_ROOT/openssl
 
 version=1.0.2q
-archs=(arm arm64 x86 x86_64)
+archs=(arm x86)
 
 for arch in ${archs[@]}; do
     xLIB="/lib"
